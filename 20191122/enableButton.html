@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        #text_1{
+            padding: 10px;
+        }
+        #search_btn{
+            border: 1px solid gray;
+            background: white;
+            width: 40px;
+            height: 40px;
+            padding: 5px;
+            margin-top: 20px;
+        }
+        #search_btn img{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="container">
+            
+<!----------------------------------------enable disable button------------------------>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>enable and disable a button</h3>
+                    <form>
+                        <input type="text" placeholder="search.." id="text_1">
+                        <button type="submit" id="search_btn"><img src="search.png"></button>
+                    </form>
+                    <script>
+                        var x_txt = document.getElementById('text_1');
+                        var x_btn = document.getElementById('search_btn');
+                        x_btn.disabled = true;
+                        
+                        x_txt.onkeyup = function(){
+                            if(x_txt.value.length >= 1){
+                                x_btn.disabled = false;
+                                x_btn.style.cursor = 'pointer';
+                            }
+                            else{
+                                x_btn.disabled = true;
+                                x_btn.style.cursor = 'default';
+                            }
+                        }
+                    </script>
+                </div>
+            </div>
+            
+<!---------------------------------------end enable disable button------------------------>
+            
+        </div>
+    </div>
+</body>
+</html>
